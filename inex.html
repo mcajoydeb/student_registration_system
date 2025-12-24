@@ -3,9 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Registration System</title>
+    <title>Studens Registration form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+
 </head>
 <body>
-    
+
+    <div class="registration-panel">
+        <div class="registration-block registration-block-left">
+            <h3>Registratio Form</h3>
+            <form action="#" method="post">
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <label for="fname">Student name</label>
+                        <input type="text" id="sname" name="sname" required="" placeholder="Enter name...">
+                    
+                    </div>                    
+                            
+                    <div class="input-group">
+                        <label for="lname">Student ID</label>
+                        <input type="text" id="stdid" name="stdid" required="" placeholder="Enter ID...">
+                      
+                    </div>
+               
+                    <div class="input-group">
+                        <label for="email">Email ID</label>
+                        <input type="text" id="email" name="email" required="" placeholder="Enter E-mail Address...">
+                       
+                    </div>                    
+                 
+                    <div class="input-group">
+                        <label for="mobile">Contact number</label>
+                        <input type="text" id="contact" name="contact" required="" placeholder="Enter Contact number...">
+                      
+                    </div>
+                    <div class="input-group">
+                        <input type="submit" value="Add student" class="button">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="registration-block registration-block-right">Registratio form</div>
+
+    </div>
+    <script src="main.js"></script>
 </body>
 </html>
