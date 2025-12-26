@@ -10,7 +10,8 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     const form = document.getElementById("studentForm");
-  
+    let editStudentId = null;
+
     const sname = document.getElementById("sname");
     const stdid = document.getElementById("stdid");
     const email = document.getElementById("email");
@@ -56,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const editBtn = document.createElement("button");
         editBtn.textContent = "Edit";
         editBtn.className = "action-btn";
-        editBtn.onclick = () => editRow(id,studentRow);
+        editBtn.onclick = () => editRow(id,student);
         action.appendChild(editBtn);
 
         const deleteBtn = document.createElement("button");
@@ -71,6 +72,18 @@ document.addEventListener("DOMContentLoaded", function () {
       });
 
 
+    }
+
+    function editRow(studentId,student){
+   
+      document.getElementById("sname").value = student.name;
+      document.getElementById("email").value = student.email;
+      document.getElementById("contact").value = student.contact;
+      document.getElementById("stdid").value = student.id;
+      document.getElementById("stdid").setAttribute('disabled', true);
+      document.getElementById("add_student").value = "Update";
+      
+      editStudentId = studentId; 
     }
 
     function deleteRow(studentId,studentRow) {
@@ -124,6 +137,20 @@ document.addEventListener("DOMContentLoaded", function () {
       localStorage.setItem("students", JSON.stringify(students));
     }
 
+     // ---------- Save Student data in localstorage ----------
+     function updateStudentData(student, studentID) {
+     
+      let students = JSON.parse(localStorage.getItem("students")) || {};
+      students[studentID] = student;
+     
+    
+      // Save back to localStorage
+      localStorage.setItem("students", JSON.stringify(students));
+      document.getElementById("stdid").removeAttribute('disabled');
+      document.getElementById("add_student").value = "Add Student";
+    }
+
+    
     // ---------- Form Submit message ----------
 
     function formSubmitted(){
@@ -206,7 +233,13 @@ document.addEventListener("DOMContentLoaded", function () {
           contact: document.getElementById("contact").value.trim()
         };
       
-        saveStudentData(student);
+        if (editStudentId === null) {
+          saveStudentData(student);
+        }else{
+          updateStudentData(student, editStudentId);
+          editStudentId = null;
+        }
+       
         formSubmitted();
         displayStudentsRecord();
         form.reset();
