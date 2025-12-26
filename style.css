@@ -15,10 +15,15 @@
     scroll-behavior: smooth;
   }
 
-
+ 
+  .heading-title{
+    display:flex;
+    justify-content:center;
+    padding: 15px;
+}
 .registration-panel {
-    margin: 2% 10%;            
-    height: 75vh;
+    margin: 0% 3%;            
+    height: 85vh;
     display: flex;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 5px;
@@ -26,18 +31,62 @@
 .registration-block{
     width: 100%;
     height: 100%;
-    padding: 5%;
+    padding: 3%;
 }
-
+.registration-block h3{
+  margin-bottom: 2em;
+}
 .registration-block-left{
     background-color: #fff;   
-    border-radius: 5px 0 0 5px;    
+    border-radius: 5px 0 0 5px;  
+    flex-basis: 40%;
 }
 .registration-block-right{
     background-color: #463acc;
     border-radius: 0 5px 5px 0;  
+    color : #fff;
+    flex-grow: 1;
 }
 
+button.action-btn {
+  margin-right: 1em;
+  padding: 3px 10px;
+  cursor: pointer;
+  background: #ddd;
+  border: none;
+  border-radius: 5px;
+}
+
+div#studentList {
+  height: 65vh;
+  overflow-y: auto;
+}
+
+div#studentList li {
+  list-style-type: none;
+  border-bottom: 1px dashed #988383;
+  margin-bottom: 5px;
+  padding: 8px 5px;
+}
+.header-row, .student-row{
+  display: flex;
+  justify-content: space-between;
+}
+
+.cell{
+  width:100%;
+  border-bottom: 1px dashed #a07d7d;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+}
+
+.cell:nth-child(5n) {
+  border: none;
+  text-align: right;
+}
+.student-row .cell:nth-child(4n) {
+  text-align: right;
+}
 /*=======  Form =================*/
 input[type=text],
 select,
@@ -75,4 +124,7 @@ input[type=submit] {
     font-size: 11px;
 }
 
-
+.fade-text {
+  opacity: 1;
+  transition: opacity 2s ease;
+}
