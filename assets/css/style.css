@@ -129,3 +129,13 @@ input[type=submit] {
   opacity: 1;
   transition: opacity 2s ease;
 }
+
+@media (max-width: 600px) {
+
+  .registration-panel{
+    flex-direction: column;
+  }
+  .student-row {
+    flex-direction: column;
+  }
+}
