@@ -87,6 +87,7 @@ div#studentList li {
 .student-row .cell:nth-child(4n) {
   text-align: right;
 }
+
 /*=======  Form =================*/
 input[type=text],
 select,

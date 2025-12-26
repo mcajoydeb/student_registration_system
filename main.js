@@ -10,19 +10,23 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     const form = document.getElementById("studentForm");
-    let editStudentId = null;
-
     const sname = document.getElementById("sname");
     const stdid = document.getElementById("stdid");
     const email = document.getElementById("email");
     const contact = document.getElementById("contact");
-    displayStudentsRecord();
+    let editStudentId = null;
+
+    displayStudentsRecord(); // on page load render student's list
+
+    // ---------- Render students list  ----------
+
     function loadStudents() {
       const data = localStorage.getItem("students");
       console.log('students data'+ data)
       return data ? JSON.parse(data) : {};
     }
 
+    // ---------- Display Students record ----------
     function displayStudentsRecord() {
       const students = loadStudents();
       const studentList = document.getElementById("studentList");
@@ -74,6 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
+    // ---------- Edit Student ----------
     function editRow(studentId,student){
    
       document.getElementById("sname").value = student.name;
@@ -86,6 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
       editStudentId = studentId; 
     }
 
+     // ---------- Delete Student ----------
     function deleteRow(studentId,studentRow) {
       
       if (!confirm("Delete this student?")) return;
