@@ -49,3 +49,6 @@ student-registration/
 | Student ID | Only numbers |
 | Email | Valid email format |
 | Contact Number | Numbers only (10 digits) 
+
+repositery 
+https://github.com/mcajoydeb/student_registration_system
